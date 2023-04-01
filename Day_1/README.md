@@ -233,5 +233,11 @@ basket = [1,2,3,4,5]
 basket.remove(4) #value 4
 print(basket)
 #Result: [1,2,3,5]
+
+#clear
+basket = [1,2,3,4,5]
+basket.clear()
+print(basket)
+#Result: []
 ```
 

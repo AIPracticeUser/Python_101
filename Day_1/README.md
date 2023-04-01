@@ -347,6 +347,317 @@ print(d)
 
 ```
 
+### Dictionary
+```
+#Dictionary is an unordered key value pair
+dict = {
+ 'a': [1,2,3],
+ 'b': "hello",
+ 'c': True
+}
+
+print(dictionary['b'])
+Result: Hello
+
+print(dictionary['a'][1])
+Result: 2
+
+#Dictionary in List
+my_list = [
+ {
+  'a': [1,2,3],
+  'b': "hello",
+  'c': True
+  },
+  {
+  'a': [1,2,3],
+  'b': "hello",
+  'c': True
+  }
+]
+
+print(my_list[0]['a'][2])
+Result: 3
+
+### Dictionary Methods
+user = {
+  'basket': [1,2,3],
+  'greet' : 'hello'
+}
+
+print(user['age'])
+#Result : Error (This will cause an error if there is no such key)
+
+print(user.get('age'))
+#Result: None (This will not cause an error)
+
+#if dict does not contain such key, use alternative value
+user = {
+  'basket': [1,2,3],
+  'greet' : 'hello'
+}
+print(user.get('age', 55))
+#Result: 55
+
+#if the dict has the key, it will use they key pair value
+user = {
+  'basket': [1,2,3],
+  'greet' : 'hello'
+  'age'   : 40
+}
+
+print(user.get('age',55))
+#Result: 40
+
+#Another way to create a dictionary
+user2 = dict(name = 'John')
+#Result: {'name' : 'John'}
+```
+
+### Dictionary Method 2
+```
+user = {
+  'basket': [1,2,3],
+  'greet' : 'hello'
+  'age'   : 20
+}
+
+print('basket' in user)
+#Result: True
+
+#Checking for dictonary keys
+user = {
+  'basket': [1,2,3],
+  'greet' : 'hello',
+  'age'   : 40
+}
+
+print('age' in user.keys())
+#Result: True
+
+#Checking for dictonary values
+user = {
+  'basket': [1,2,3],
+  'greet' : 'hello',
+  'age'   : 40
+}
+
+print('age' in user.values())
+#Result: False
+
+#Checking the whole dictionary structure (items)
+user = {
+  'basket': [1,2,3],
+  'greet' : 'hello',
+  'age'   : 40
+}
+print(user.items())
+#Result: dict_items([('basket', [1, 2, 3]), ('greet', 'hello'), ('age', 40)]) #This is a tuple
+
+#Clearing the dict
+user = {
+  'basket': [1,2,3],
+  'greet' : 'hello',
+  'age'   : 40
+}
+user.clear()
+print(user)
+#Result: {}
+
+#Copy the dict
+user2 = user.copy()
+print(user2)
+#Result: {'basket': [1, 2, 3], 'greet': 'hello', 'age': 40}
+
+#Pop the dict records
+user = {
+  'basket': [1,2,3],
+  'greet' : 'hello',
+  'age'   : 40
+}
+
+print(user.pop('age'))
+print(user)
+#Result: 
+# 40
+# {'basket': [1, 2, 3], 'greet': 'hello'}
+
+#Pop the last item in the dictionary
+user = {
+  'basket': [1,2,3],
+  'greet' : 'hello',
+  'age'   : 40
+}
+print(user.popitem())
+print(user)
+#Result:
+#('age', 40)
+#{'basket': [1, 2, 3], 'greet': 'hello'}
+
+#Update on the value
+user = {
+  'basket': [1,2,3],
+  'greet' : 'hello',
+  'age'   : 40
+}
+
+print(user.update({'age':55}))
+print(user)
+#Result: {'basket': [1, 2, 3], 'greet': 'hello', 'age': 55}
+
+#Insert a new value if update key is not found
+user = {
+  'basket': [1,2,3],
+  'greet' : 'hello',
+  'age'   : 40
+}
+
+print(user.update({'ages':55}))
+print(user)
+#Result: {'basket': [1, 2, 3], 'greet': 'hello', 'age': 40, 'ages': 55}
+```
+
+### Tuple
+```
+#Tuple is an immutable list
+my_tuple = (1,2,3,4,5)
+print(my_tuple[0]) #Result: 1
+my_tuple[1] = 'z' #Result in Error
+print(5 in my_tuple) #Result: True
+
+#Since tuple is immutable, it can be included in a dictionary as a key
+user = {
+  (1,2): [1,2,3],
+  'greet':'hello',
+  'age': 20
+  
+}
+print(user[(1,2)])
+#Result: [1,2,3]
+
+#Tuple slicing
+my_tuple = (1,2,3,4,5)
+new_tuple = my_tuple[1:2]
+print(new_tuple)
+#Result: (2,)
+
+#Tuple Assigning
+x,y,z, *other = (1,2,3,4,5)
+
+print(other)
+#Result: (4,5)
+
+#Tuple count
+my_tuple = (1,2,3,4,5,5)
+print(my_tuple.count(5))
+#Result: 2
+
+#Tuple Index
+my_tuple = (1,2,3,4,5,5)
+print(my_tuple.index(4))
+#Result: 3
+```
+### Set
+```
+Set is unordered collections of unique objects
+my_set = {1,2,3,4,5}
+my_set.add(100)
+my_set.add(2)
+print(my_set)
+#Result: {1, 2, 3, 4, 5, 100}
+
+#Changing list to set
+my_list = [1,2,3,4,5,5]
+print(set(my_list))
+#Result: {1,2,3,4,5}
+
+#Checking for value
+my_set = {1,2,3,4,5}
+print(my_set[0]) #Result will return an error
+print(1 in my_set) #Result: True
+
+#Same methods as previous
+my_set = {1,2,3,4,5}
+new_set = my_set.copy()
+my_set.clear()
+print(new_set)
+#Result: {1,2,3,4,5}
+```
+
+### Sets 2
+```
+#Difference
+my_set = {1,2,3,4,5}
+your_set = {4,5,6,7,8,9,10}
+
+print(my_set.difference(your_set))
+#Result: {1, 2, 3} #This tells the difference without changing the set
+
+#Discard
+my_set.discard(5)
+print(my_set)
+#Result: {1, 2, 3, 4}
+
+#Difference_update
+my_set.difference_update(yourset))
+print(my_set)
+#Result: {1,2,3} #It adds the differences and changes the set
+
+#Intersection
+my_set = {1,2,3,4,5}
+your_set = {4,5,6,7,8,9,10}
+print(my_set.intersection(your_set))  #Can use print(my_set & your_set) as well
+#Result: {4,5}
+
+#isdisjoint
+my_set = {1,2,3,4,5}
+your_set = {4,5,6,7,8,9,10}
+print(my_set.isdisjoint(your_set))
+#Result: False (Because the 2 sets has same element in common)
+
+#union()
+print(my_set.union(your_set))
+#Result: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+#Another way of representing union
+print(my_set | your_set)
+#Result: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+#is subset
+my_set = {4,5}
+your_set = {4,5,6,7,8,9,10}
+print(my_set.issubset(your_set))
+#Result: True 
+
+my_set = {3,4,5}
+your_set = {4,5,6,7,8,9,10}
+print(my_set.issubset(your_set))
+#Result: False
+
+#issuperset
+my_set = {4,5}
+your_set = {4,5,6,7,8,9,10}
+print(your_set.issuperset(my_set))
+#Result: False
+
+my_set = {4,5}
+your_set = {4,5,6,7,8,9,10}
+print(my_set.issuperset(your_set))
+#Result: True
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

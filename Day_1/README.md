@@ -241,3 +241,118 @@ print(basket)
 #Result: []
 ```
 
+### List Method 2
+Python Keywords = https://www.w3schools.com/python/python_ref_keywords.asp
+```
+#Index
+basket = ['a','b','c','d','e']
+print(basket,index('d'))
+Result: 3
+
+#Index with parameters
+basket = ['a','b','c','d','e']
+print(basket,index('d', 0, 2)) #start at index 0, stop at index 2
+Result: Error
+print(basket,index('d', 0, 4)) #start at index 0, stop at index 4
+Result: 3
+
+#Another way of searching for element in list
+basket = ['a','b','c','d','e']
+print('d' in basket)
+Result: True
+print('f' in basket)
+Result: False
+print('i' in 'hi my name is steven')
+Result: True
+
+#Counting number of occurrences of value
+basket = ['d','b','c','d','d']
+print(basket.count('d'))
+Result: 3
+```
+### List Method 3
+```
+# Sort
+basket = ['d','b','c','d','d']
+basket.sort()
+print(basket)
+Result: ['b','c','d','d','d']
+
+# Sorted
+basket = ['a','x','b','c','d','e','d']
+# Produce a new array of result without affecting the previous list
+print(sorted(basket)) 
+print(basket)
+#Result:
+# ['a','b','c','d','d','e','x']
+# ['a','x','b','c','d','e','d']
+
+# Copy
+basket = ['a','x','b','c','d','e','d']
+new_basket = basket.copy()
+print(new_basket)
+Result: ['a','x','b','c','d','e','d']
+
+# Reverse
+basket = ['a','x','b','c','d','e','d']
+basket.reverse()
+print(basket)
+Result: ['d','e','d','c','b','x','a']
+```
+
+### Common List patterns
+```
+#Another method of list reversing
+basket = ['a','x','b','c','d','e','d']
+print(basket[::-1])
+Result: ['d','e','d','c','b','x','a']
+
+# Creating a range
+print(list(range(100)))
+#Result: [0,1,2.......100]
+
+# Join a sentence
+sentence = '!'
+new_sentence = sentence.join(['hi','my','name','is','JOJO'])
+print(new_sentence)
+#Result: hi!my!name!is!JOJO
+
+#Another method of writing join
+
+new_sentence2 = ' '.join(['hi','my','name','is','JOJO'])
+print(new_sentence2)
+#Result: hi my name is JOJO
+```
+
+### List Unpacking
+```
+#Unpacking
+a,b,c = [1,2,3]
+print(a)
+print(b)
+print(c)
+#Result: 1, 2 ,3
+
+#Unpacking with rest of list
+a,b,c, *other = [1,2,3,4,5,6,7,8,9]
+print(other)
+#Result: [4,5,6,7,8,9]
+
+#Unpacking with rest of list and last item
+a,b,c, *other, d = [1,2,3,4,5,6,7,8,9]
+print(other)
+#Result: [4,5,6,7,8]
+print(d)
+#Result: 9
+
+```
+
+
+
+
+
+
+
+
+
+

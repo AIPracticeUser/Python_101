@@ -64,6 +64,49 @@ With formatted string, you do not need to convert variables to string
 And it is easier to construct the sentence
 print(f'hi {name}. You are {age} years old)
 
+Previously in Python 2, format string used to work as shown below
+print('hi {name}. You are {age} years old'.format(name='Johnny', age=100)
+
+### String Indexes
+[start:stop:stepover]
+selfish = 'me me me'
+print(selfish[0])  -> m
+print(selfish[1])  -> e
+print(selfish[-1]) -> e
+
+number = '01234567'
+print(number[0:7])  -> 123456
+print(number[0:8:2] -> 0246
+print(number[1:]    -> 1234567
+print(number[:5]    -> 01234
+print(numner[::-1]  -> 76543210
+
+### Built-In functions + Methods
+functions ->  https://docs.python.org/3/library/functions.html
+string    ->  https://www.w3schools.com/python/python_ref_string.asp
+
+Example of function
+print(len('hellloooo'))  -> 9
+
+Example of methods
+```
+quote = 'to be or not to be'
+print(quote.upper())              -> TO BE OR NOT TO BE
+print(quote.capitalize())         -> To be or not to be
+print(quote.find('be'))           -> 3
+print(quote.replace('be', 'me'))  -> to me or not to me
+```
+
+Question: After executing the above program, when executing print(quote), what is the exepcted result?
+
+Answer: to be or not to be
+Reason: Because string is immutable, they cannot be change. They can only be destroyed or created.
+```
+quote2 = quote.replace('be', 'me')) 
+print(quote2) -> to me or not me
+```
+
+
 
 
 

@@ -33,6 +33,14 @@ However, only works with string
 print("Hello" + 5) will generate error
 ```
 
+### Booleans
+is_cool = True
+print(bool(0))      #False
+print(bool(1))      #True
+print(bool('True')) #True
+
+
+
 ### Type Conversion
 To know the type of the variable, use type function
 ```
@@ -126,7 +134,104 @@ quote2 = quote.replace('be', 'me'))
 print(quote2) -> to me or not me
 ```
 
+### List
+```
+#You can add anything in the list
+l1 = [1,2,3,4,5]
+l2 = [1,2,'a',True]
 
+print(l2[0])  # 1
+```
 
+### List Slicing
+```
+# List is mutable
+amazon_cart = [
+ 'notebooks',
+ 'sunglasses',
+ 'toys',
+ 'grapes'
+]
+amazon_cart[0] = 'laptop'
+print(amazon_cart)
+#Result: ['laptop','sunglasses','toys','grapes']
 
+print(amazon_cart[1:3])
+#Result: ['sunglasses','toys']
+
+# Mistake
+amazon_cart[0] = 'laptop'
+new_cart = amazon_cart
+new_cart[0] = 'gum'
+
+print(new_cart) 
+print(amazon_cart)
+
+#Result
+#['gum', 'sunglasses', 'toys', 'grapes']
+#['gum', 'sunglasses', 'toys', 'grapes']
+
+#In order to get the correct answer, you need to copy the list by slicing
+amazon_cart[0] = 'laptop'
+new_cart = amazon_cart[:]
+new_cart[0] = 'gum'
+print(new_cart)
+print(amazon_cart)
+
+['gum','sunglasses','toys','grapes']
+['laptop','sunglasses','toys',grapes']
+```
+
+### Matrix
+```
+#Example of 2 dimensional array
+matrix = [
+ [1,2,3],
+ [2,4,6],
+ [7,8,9]
+]
+
+print(matrix[0][1])
+#result: 2
+```
+
+### List Methods
+List methods: https://www.w3schools.com/python/python_ref_list.asp
+```
+# adding
+basket = [1,2,3,4,5]
+print(basket.append(100))
+print(basket)
+# Result: [1,2,3,4,5,100]
+
+#insert
+basket = [1,2,3,4,5]
+basket.insert(4, 100)
+print(basket)
+#Result: [1,2,3,4,100,5]
+
+#extend
+basket = [1,2,3,4,5]
+basket.extend([100,101])
+print(basket)
+#Result: [1,2,3,4,5,100,101]
+
+#pop
+basket = [1,2,3,4,5]
+basket.pop()
+print(basket)
+#Result: [1,2,3,4]
+basket.pop()
+print(basket)
+#Result: [1,2,3]
+basket.pop(0) #index 0
+print(basket)
+#Result: [2,3]
+
+#remove
+basket = [1,2,3,4,5]
+basket.remove(4) #value 4
+print(basket)
+#Result: [1,2,3,5]
+```
 

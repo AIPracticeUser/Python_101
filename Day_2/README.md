@@ -32,5 +32,36 @@ user = {
   'age' : 5006,
   'can_swim': False
   
-for 
+for item in user.items():
+  print(item)
+  
+#result: 
+#('name', 'Golem')
+#('age', 5006)
+#('can_swim', False)
+
+for item in user.values():
+  print(item)
+
+#result:
+# Golem
+# 5006
+# False
+
+for item in user.keys():
+  print(item)
+  
+#result:
+# name
+# age
+# can_swim
+
+for key, value in user.items():
+  print(key, value)
+
+# result:
+# name Golem
+# age 5006
+# can_swim False
+
 ```

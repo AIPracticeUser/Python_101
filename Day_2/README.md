@@ -109,7 +109,6 @@ for _ in range(0, 10, 2):
 ```
 
 ### enumerate()
-
 ```
 for char in enumerate("Hello"):
   print(char)

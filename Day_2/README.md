@@ -110,6 +110,7 @@ for _ in range(0, 10, 2):
 
 ### enumerate()
 
+```
 for char in enumerate("Hello"):
   print(char)
   
@@ -151,3 +152,5 @@ for i,char in enumerate(list(range(100))):
     print(f"the index is {i}")
 
 # the index is 50
+```
+

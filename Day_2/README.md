@@ -107,3 +107,47 @@ for _ in range(0, 10, 2):
 #[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 ```
+
+### enumerate()
+
+for char in enumerate("Hello"):
+  print(char)
+  
+#Result
+#(0, 'H')
+#(1, 'e')
+#(2, 'l')
+#(3, 'l')
+#(4, 'o')
+
+
+for i,char in enumerate("Hello"):
+  print(i,char)
+  
+#Result
+#0 H
+#1 e
+#2 l
+#3 l
+#4 o
+
+for i,char in enumerate([1,2,3]):
+  print(i,char)
+  
+#Result
+#0 1
+#1 2
+#2 3
+
+
+for i,char in enumerate((1,2,3)):
+  print(i,char)
+#0 1
+#1 2
+#2 3
+
+for i,char in enumerate(list(range(100))):
+  if char == 50:
+    print(f"the index is {i}")
+
+# the index is 50

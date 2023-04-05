@@ -158,4 +158,16 @@ https://replit.com/@LightGamer1/Find-Duplicates?v=1
 ### First GUI exercise
 https://replit.com/@LightGamer1/GUI-exercise?v=1
 
+### DocStrings
+```
+def test(a):
+  '''
+  Info: this function tests and prints para
+  '''
+  print(a)
+
+print(test.__doc__)
+
+#Result:  Info: this function tests and prints para
+```
 

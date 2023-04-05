@@ -152,4 +152,10 @@ for i,char in enumerate(list(range(100))):
 
 # the index is 50
 ```
+### Finding duplicates exercise
+https://replit.com/@LightGamer1/Find-Duplicates?v=1
+
+### First GUI exercise
+https://replit.com/@LightGamer1/GUI-exercise?v=1
+
 

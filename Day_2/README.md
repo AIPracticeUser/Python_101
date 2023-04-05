@@ -171,7 +171,6 @@ print(test.__doc__)
 #Result:  Info: this function tests and prints para
 ```
 ### Clean Code
-
 ```
 # clean code
 def is_even(num):

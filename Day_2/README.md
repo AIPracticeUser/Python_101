@@ -240,4 +240,7 @@ print(super_func('Andy', 1,2,3,4,5, num1=5, num2=10))
 - Find the highest even number in the list
 https://replit.com/@LightGamer1/Highest-Even-Number?v=1
 
+### Scopes
+- What variables do I have access to?
+
 

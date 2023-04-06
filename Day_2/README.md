@@ -195,3 +195,49 @@ def is_even(num):
   
 print(is_even(51))
 ```
+
+### *args **kwargs
+- *args = positional arguments
+```
+def super_func(*args):
+  print(*args)
+  return sum(args)
+
+super_func(1,2,3,4,5)
+
+# This return the parameters
+Result: 1 2 3 4 5
+```
+
+```
+def super_func(*args):
+  print(args)
+  return sum(args)
+
+print(super_func(1,2,3,4,5))
+
+# This actually returns the tuple
+Result: (1, 2, 3, 4, 5)
+#15
+```
+
+- **kwargs = keyword arguments
+```
+def super_func(name, *args, i='hi', **kwargs):
+  total = 0
+  for items in kwargs.values():
+    total += items
+  return sum(args) + total
+
+print(super_func('Andy', 1,2,3,4,5, num1=5, num2=10))
+
+#Rule: params , *args, default parameter, **kwargs 
+#Need to follow the above rule for function params
+#Result: 30
+```
+
+### Exercise 2
+- Find the highest even number in the list
+https://replit.com/@LightGamer1/Highest-Even-Number?v=1
+
+

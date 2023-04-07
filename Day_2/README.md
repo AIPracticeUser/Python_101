@@ -337,3 +337,39 @@ print(count(count(total)))
 #Result : 2
 ```
 
+### nonlocal Keyword
+- Use the keyword nonlocal to declare that the variable is not local.
+- in the example, it uses the parent local(outer()) variable x, so anything assign will be changed. 
+```
+def outer():
+  x = "local"
+  def inner():
+    nonlocal x
+    x = "nonlocal"
+    print("inner", x)
+  
+  inner()
+  print("outer", x)
+
+outer()
+#Result:
+#inner nonlocal
+#outer nonlocal
+```
+- if remove the nonlocal, result change
+```
+def outer():
+  x = "local"
+  def inner():
+    x = "nonlocal"
+    print("inner", x)
+  
+  inner()
+  print("outer", x)
+
+outer()
+#Result:
+#inner nonlocal
+#outer local
+```
+

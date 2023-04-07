@@ -102,11 +102,18 @@ print(selfish[1])  -> e
 print(selfish[-1]) -> e
 
 number = '01234567'
-print(number[0:7])  -> 123456
-print(number[0:8:2] -> 0246
-print(number[1:]    -> 1234567
-print(number[:5]    -> 01234
-print(numner[::-1]  -> 76543210
+print(number[0:7]) 
+print(number[0:8:2])
+print(number[1:])
+print(number[:5])  
+print(number[::-1]) 
+
+#Results:
+#0123456
+#0246
+#1234567
+#01234
+#76543210
 ```
 ### Built-In functions + Methods
 functions ->  https://docs.python.org/3/library/functions.html
@@ -645,25 +652,4 @@ your_set = {4,5,6,7,8,9,10}
 print(my_set.issuperset(your_set))
 #Result: True
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

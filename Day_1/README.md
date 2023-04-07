@@ -253,14 +253,14 @@ Python Keywords = https://www.w3schools.com/python/python_ref_keywords.asp
 ```
 #Index
 basket = ['a','b','c','d','e']
-print(basket,index('d'))
+print(basket.index('d'))
 Result: 3
 
 #Index with parameters
 basket = ['a','b','c','d','e']
-print(basket,index('d', 0, 2)) #start at index 0, stop at index 2
+print(basket.index('d', 0, 2)) #start at index 0, stop at index 2
 Result: Error
-print(basket,index('d', 0, 4)) #start at index 0, stop at index 4
+print(basket.index('d', 0, 4)) #start at index 0, stop at index 4
 Result: 3
 
 #Another way of searching for element in list

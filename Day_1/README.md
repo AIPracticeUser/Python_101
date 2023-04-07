@@ -606,7 +606,7 @@ print(my_set)
 #Result: {1, 2, 3, 4}
 
 #Difference_update
-my_set.difference_update(yourset))
+my_set.difference_update(your_set))
 print(my_set)
 #Result: {1,2,3} #It adds the differences and changes the set
 

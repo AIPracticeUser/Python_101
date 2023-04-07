@@ -241,6 +241,99 @@ print(super_func('Andy', 1,2,3,4,5, num1=5, num2=10))
 https://replit.com/@LightGamer1/Highest-Even-Number?v=1
 
 ### Scopes
-- What variables do I have access to?
+- Rule 1 : Start with local scope
 
+```
+a = 1
+
+def confusion():
+  a = 5
+  return a
+ 
+ print(confusion())
+ print(a)
+ 
+# Result :
+#5
+#1
+```
+- Rule 2 : Parent local?
+```
+a = 1
+
+def parent():
+  a = 10
+  def confusion(): 
+    return a       #So when return a, confusion will check the parent scope, which is 10
+  return confusion()
+
+print(parent())
+print(a)
+
+#Result: 
+#10
+#1
+```
+- Rule 3: Global?
+```
+a = 1
+
+def parent():
+  def confusion():
+    return a
+  return confusion()
+  
+print(parent())
+print(a)
+
+#Result:
+#1
+#1
+```
+- Rule 4: Build in Python Function
+```
+a = 1               #3rd, check is sum in global scope
+
+def parent():       #2nd , check is sum in parent scope
+  def confusion():
+    return sum      # 1st, check is sum in local scope
+  return confusion()
+
+print(parent())     #4th, check is sum in python function
+print(a)
+
+#Result
+#<built-in function sum>
+#1
+```
+
+### Global Keyword
+```
+total = 0
+
+def count():
+  global total
+  total += 1
+  return total
+
+
+count()
+count()
+print(total)
+
+# Result: 2
+```
+
+- Another way beside using global keyword
+```
+total = 0
+
+def count(total):
+  total += 1
+  return total
+  
+print(count(count(total)))
+
+#Result : 2
+```
 

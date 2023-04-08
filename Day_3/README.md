@@ -67,11 +67,22 @@ class PlayerCharacter:
   #method
   def run(self):
     print('run')
+    return 'done'
 
 #instaniated
 player1 = PlayerCharacter('Cindy', 44)
 player2 = PlayerCharacter('Tom', 21)
+player2.attack = 50
 
 print(player1.name, player1.age)
+print(player1.run())
 print(player2.name, player2.age)
+print(player2.attack)
+
+#Result:
+# Cindy 44
+# run
+# done
+# Tom 21
+# 50
 ```

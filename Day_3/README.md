@@ -262,3 +262,16 @@ player2 = PlayerCharacter.adding_thing2(4,5)
 print(player2)
 ```
 - both @classmethod and @staticmethod will not be encountered often
+
+### Encapsulation
+- Encapsulation refers to the bundling of attributes and methods inside a single class. 
+- It prevents outer classes from accessing and changing attributes and methods of a class. 
+
+### Abstraction 
+- Abstraction in python is defined as a process of handling complexity by hiding unnecessary information from the user.
+- Example
+```
+print(len((1,2,3,1))
+#Result: 4
+# We do not need to know how len function is implement, only need to know the method of calling it
+```

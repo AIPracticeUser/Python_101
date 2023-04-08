@@ -88,7 +88,7 @@ print(player2.attack)
 ```
 
 ### Attributes and Methods
-- Continued from previous example
+- Continued from previous example, there is a help function
 ```
 help(player1)
 
@@ -120,3 +120,31 @@ elf)) for accurate signature.
  |      list of weak references to the ob
 ject (if defined)
 ```
+### Class Object Attribute
+- A class attribute is a variable that belongs to a certain class, and not a particular object.
+- Every instance of this class shares the same variable.
+- These attributes are usually defined outside the __init__ constructor
+```
+class PlayerCharacter:
+  #Class object Attribute
+  membership = True
+  def __init__(self, name, age):
+    #attributes
+    if (PlayerCharacter.membership):
+      self.name = name
+      self.age = age
+  
+  #method
+  def shout(self):
+    print(f'My name is {self.name}')
+    print(f'I am {self.age} years old')
+
+#instaniated
+player1 = PlayerCharacter('Cindy', 44)
+player1.shout()
+
+#Result:
+My name is Cindy
+I am 44 years old
+```
+

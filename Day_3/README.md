@@ -8,6 +8,9 @@
 - Methods are functions that are defined inside a class that describe the behaviors of an object. Each method contained in class definitions starts with a reference to an instance object. Additionally, the subroutines contained in an object are called instance methods. Programmers use methods for reusability or keeping functionality encapsulated inside one object at a time.
 - Attributes are defined in the class template and represent the state of an object. Objects will have data stored in the attributes field. Class attributes belong to the class itself.
 
+![image](https://user-images.githubusercontent.com/100339175/230718303-ed7177e1-3c08-4d85-a0bf-5b8d74b702c8.png)
+
+
 ### What are the main principles of OOP?
 - Object-oriented programming is based on the following principles:
 
@@ -25,3 +28,50 @@
 Interface descriptions. Descriptions of external systems are simple, due to message passing techniques that are used for objects communication.
 - Security. Using encapsulation and abstraction, complex code is hidden, software maintenance is easier and internet protocols are protected.
 - Flexibility. Polymorphism enables a single function to adapt to the class it is placed in. Different objects can also pass through the same interface.
+
+### Example
+```
+class BigObject:
+  pass
+
+obj1 = BigObject()
+print(type(None))
+print(type(True))
+print(type(5))
+print(type(5.5))
+print(type([]))
+print(type(()))
+print(type({}))
+print(type(obj1))
+
+#Result:
+<class 'NoneType'>
+<class 'bool'>
+<class 'int'>
+<class 'float'>
+<class 'list'>
+<class 'tuple'>
+<class 'dict'>
+<class '__main__.BigObject'>
+```
+
+### Example 2
+```
+class PlayerCharacter:
+  #Constructor
+  def __init__(self, name, age):
+    #attributes
+    self.name = name
+    self.age = age
+
+  #method
+  def run(self):
+    print('run')
+
+#instaniated
+player1 = PlayerCharacter('Cindy', 44)
+player2 = PlayerCharacter('Tom', 21)
+
+print(player1.name, player1.age)
+print(player2.name, player2.age)
+```

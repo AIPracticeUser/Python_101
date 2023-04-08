@@ -86,3 +86,37 @@ print(player2.attack)
 # Tom 21
 # 50
 ```
+
+### Attributes and Methods
+- Continued from previous example
+```
+help(player1)
+
+#Result
+Help on PlayerCharacter in module __main_
+_ object:
+
+class PlayerCharacter(builtins.object)
+ |  PlayerCharacter(name, age)
+ |  
+ |  Methods defined here:
+ |  
+ |  __init__(self, name, age)
+ |      Initialize self.  See help(type(s
+elf)) for accurate signature.
+ |  
+ |  run(self)
+ |      #method
+ |  
+ |  -------------------------------------
+---------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |      dictionary for instance variables
+ (if defined)
+ |  
+ |  __weakref__
+ |      list of weak references to the ob
+ject (if defined)
+```

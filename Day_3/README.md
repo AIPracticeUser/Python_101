@@ -148,3 +148,36 @@ My name is Cindy
 I am 44 years old
 ```
 
+### Exercise 3
+- Find the oldest cat
+```
+import random
+#Given the below class:
+class Cat:
+    species = 'mammal'
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+# 1 Instantiate the Cat object with 3 cats
+cat = []
+for i in range(3):
+ cat.append(Cat("cat" + str(i+1), random.randint(1,20)))
+ print(f"Cat {i+1} age: {cat[i].age}")
+
+
+# 2 Create a function that finds the oldest cat
+def oldest_cat(cat_list):
+  max = 0
+  for n in range(len(cat_list)):
+    if cat_list[n].age > max:
+      max = cat[n].age
+  return max
+
+
+# 3 Print out: "The oldest cat is x years old.". x will be the oldest cat age by using the function in #2
+oldest_cat_age = oldest_cat(cat)
+print(f"The oldest cat is {oldest_cat_age} years old")
+```
+

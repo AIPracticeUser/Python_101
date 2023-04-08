@@ -180,4 +180,85 @@ def oldest_cat(cat_list):
 oldest_cat_age = oldest_cat(cat)
 print(f"The oldest cat is {oldest_cat_age} years old")
 ```
+https://replit.com/@LightGamer1/OOP-Exercise-Cat-1?v=1
 
+### @classmethod
+```
+#OOP
+class PlayerCharacter:
+  membership = True
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+  def minus_things(self):
+    return "omg"
+  
+  @classmethod
+  def adding_things(cls, num1, num2):
+    return num1 + num2
+
+player1 = PlayerCharacter('Tom', 20)
+
+print(player1.minus_things())
+print(PlayerCharacter.adding_things(2,3))  #with classmethod, the class does not need to be instantated
+
+#Result:
+#omg
+#5
+
+```
+### Using the @classmethod to instatited
+```
+#OOP
+class PlayerCharacter:
+  membership = True
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+  # def minus_things(self):
+  #   return "omg"
+  
+  @classmethod
+  def adding_things(cls, num1, num2):
+    return cls("Teddy", num1 + num2)
+
+player1 = PlayerCharacter('Tom', 20)
+
+# print(player1.minus_things())
+player3 = PlayerCharacter.adding_things(2,3)
+print(player3.age)
+```
+
+### @staticmethod
+- Using staticmethod does not have access to the class parameters
+- Using classmethod have access to class parameters
+```
+#OOP
+class PlayerCharacter:
+  membership = True
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+  # def minus_things(self):
+  #   return "omg"
+  
+  @classmethod
+  def adding_things(cls, num1, num2):
+    return cls("Teddy", num1 + num2)
+
+  @staticmethod
+  def adding_thing2(num1, num2):
+    return num1 + num2
+
+player1 = PlayerCharacter('Tom', 20)
+
+# print(player1.minus_things())
+player1 = PlayerCharacter.adding_things(2,3)
+print(player1.age)
+player2 = PlayerCharacter.adding_thing2(4,5)
+print(player2)
+```
+- both @classmethod and @staticmethod will not be encountered often

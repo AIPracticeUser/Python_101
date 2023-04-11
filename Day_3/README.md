@@ -535,3 +535,60 @@ x = Child("Hello, and welcome!")
 
 x.printmessage()
 ```
+
+### Introspection
+- introspection is the ability to determine the type of an object at runtime.
+- It is one of Python's strengths. Everything in Python is an object and we can examine those objects. 
+- Python ships with a few built-in functions and modules to help us.
+
+Example
+- if we add this dir(), we are able to see what this object has access to
+```
+print(dir(wizard1))
+#Result
+['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'attack', 'email', 'name', 'power', 'sign_in']
+```
+- Note that: email, attack, name, power, sign_in are available
+
+### Dunder Methods
+- In Python, dunder methods are methods that allow instances of a class to interact with the built-in functions and operators of the language.
+- Also known as "special methods"
+- We are able to do some custom modify to these "special methods"
+
+```
+class Toy():
+  def __init__(self, color, age):
+    self.color = color
+    self.age = age
+    self.my_dict = {
+      'name' : 'Yoyo',
+      'has_pets': False
+    }
+
+  def __str__(self):
+    return f"{self.color}"
+
+  def __len__(self):
+    return 5
+
+  def __call__(self):
+    return "yessss?"
+
+  def __getitem__(self, i):
+    return self.my_dict[i]
+
+action_figure = Toy('red', 0)
+print(action_figure.__str__())
+print(str(action_figure))
+print(len(action_figure))
+print(action_figure())
+print(action_figure['name'])
+
+#Result"
+# red
+# red
+# 5
+# yessss?
+# Yoyo
+```
+

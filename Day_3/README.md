@@ -653,5 +653,13 @@ hb1 = HybridBorg('borgie', 50, 100)
 hb1.check_arrows()
 
 print(hb1.power)
+
+hb1.sign_in()
+
+# Result
+# 100 remaining
+# 50
+# logged in
 ```
+- HybridBorg is inherenting from both Wizard and Archer
 

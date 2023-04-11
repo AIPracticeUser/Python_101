@@ -591,4 +591,67 @@ print(action_figure['name'])
 # yessss?
 # Yoyo
 ```
+Another Example
+```
+class SuperList(list):
+  def __len__(self):
+    return 1000
+
+
+super_list1 = SuperList()
+
+print(len(super_list1))
+super_list1.append(5)
+print(super_list1[0])
+print(issubclass(list,object))
+
+# Result:
+# 1000
+# 5
+# True
+```
+### Multiple Inheritance 
+- When child class is derived or inherited from more than one parent class. This is called multiple inheritance. In multiple inheritance, we have two parent classes/base classes and one child class that inherits both parent classes properties.
+```
+class User(): #Parent Class
+  def __init__(self, email):
+    self.email = email
+  
+  def sign_in(self):
+    print('logged in')
+
+  def attack(self):
+    print('do nothing')
+
+class Wizard(User): #Subclass
+  def __init__(self, name, power):
+    self.name = name
+    self.power = power
+
+  def attack(self):
+    User.attack(self)
+    print(f"attacking with power of {self.power}")
+
+class Archer(User): #Subclass
+  def __init__(self, name, arrows):
+    self.name = name
+    self.arrows = arrows
+
+  def check_arrows(self):
+    print(f"{self.arrows} remaining")
+    
+
+wizard1 = Wizard("Merlin", 50)
+archer1 = Archer("Robin", 1000)
+
+class HybridBorg(Wizard, Archer):
+  def __init__(self, name, power, arrows):
+    Archer.__init__(self, name, arrows)
+    Wizard.__init__(self, name, power)
+
+hb1 = HybridBorg('borgie', 50, 100)
+hb1.check_arrows()
+
+print(hb1.power)
+```
 

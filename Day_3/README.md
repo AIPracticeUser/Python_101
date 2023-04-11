@@ -275,3 +275,51 @@ print(len((1,2,3,1))
 #Result: 4
 # We do not need to know how len function is implement, only need to know the method of calling it
 ```
+### Private and Public Variables
+```
+class PlayerCharacter:
+  def __init__(self, name, age):
+    self._name = name   #The underline before the name of the variable is just a convention to tell the users that this is private property
+    self._age = age
+
+  def run(self):
+    print('run')
+
+  def speak(self):
+    print(f"My name is {self._name}, and I am {self._age} years old")
+
+player1 = PlayerCharacter('Steven', 100)
+
+player1.speak()
+```
+
+### Inheritance
+```
+# With inheritance,  sublass can both execute the sign-in functiom at same time.
+class User(): #Parent Class
+  def sign_in(self):
+    print('logged in')
+
+class Wizard(User): #Subclass
+  def __init__(self, name, power):
+    self.name = name
+    self.power = power
+
+  def attack(self):
+    print(f"attacking with power of {self.power}")
+
+class Archer(User): #Subclass
+  def __init__(self, name, num_arrows):
+    self.name = name
+    self.num_arrows = num_arrows
+
+  def attack(self):
+    print(f"Attacking with arrows, Left with {self.num_arrows}")
+
+wizard1 = Wizard("Merlin", 50)
+archer1 = Archer("Robin", 100)
+wizard1.sign_in()
+wizard1.attack()
+archer1.sign_in()
+archer1.attack()
+```

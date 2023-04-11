@@ -663,3 +663,28 @@ hb1.sign_in()
 ```
 - HybridBorg is inherenting from both Wizard and Archer
 
+### Method Resolution Order
+- MRO is a concept used in inheritance. 
+- It is the order in which a method is searched for in a classes hierarchy and is especially useful in Python because Python supports multiple inheritance.
+
+```
+class A:
+  num = 10
+
+class B(A):
+  pass
+
+class C(A):
+  num = 1
+
+class D(B, C):
+  pass
+
+print(D.num)
+#Result: 1
+
+print(D.mro())
+#Result:
+[<class '__main__.D'>, <class '__main__.B'>, <class '__main__.C'>, <class '__main__.A'>, <class 'object'>]
+
+```

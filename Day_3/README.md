@@ -29,6 +29,15 @@ Interface descriptions. Descriptions of external systems are simple, due to mess
 - Security. Using encapsulation and abstraction, complex code is hidden, software maintenance is easier and internet protocols are protected.
 - Flexibility. Polymorphism enables a single function to adapt to the class it is placed in. Different objects can also pass through the same interface.
 
+# 4 Pillars of OOP
+![image](https://user-images.githubusercontent.com/100339175/231120359-e146a0fa-4076-4c27-b203-d95c37f8f09d.png)
+
+- Polymorphism 
+- Inheritance
+- Abstraction
+- Encapsulation
+
+
 ### Example
 ```
 class BigObject:
@@ -294,6 +303,9 @@ player1.speak()
 ```
 
 ### Inheritance
+- Inheritance allows us to define a class that inherits all the methods and properties from another class. 
+- Parent class is the class being inherited from, also called base class. 
+- Child class is the class that inherits from another class, also called derived class.
 ```
 # With inheritance,  sublass can both execute the sign-in functiom at same time.
 class User(): #Parent Class
@@ -323,5 +335,203 @@ wizard1.attack()
 archer1.sign_in()
 archer1.attack()
 ```
+### Inheritance 2
+- We cam use isinstance to check if one class is a subclass of the other.
+```
+class User(): #Parent Class
+  def sign_in(self):
+    print('logged in')
+
+class Wizard(User): #Subclass
+  def __init__(self, name, power):
+    self.name = name
+    self.power = power
+
+  def attack(self):
+    print(f"attacking with power of {self.power}")
+
+class Archer(User): #Subclass
+  def __init__(self, name, num_arrows):
+    self.name = name
+    self.num_arrows = num_arrows
+
+  def attack(self):
+    print(f"Attacking with arrows, Left with {self.num_arrows}")
+
+wizard1 = Wizard("Merlin", 50)
+print(isinstance(wizard1, Wizard)) #True, wizard1 is the subclass of Wizard
+print(isinstance(wizard1, User)) #True, wizard1 is the subclass of user
+print(isinstance(wizard1, Object)) #True, because Python is all object programming.
+```
+
+### Polymorphism
+- Polymorphism defines the ability to take different forms. 
+- Polymorphism in Python allows us to define methods in the child class with the same name as defined in their parent class.
+```
+class User(): #Parent Class
+  def sign_in(self):
+    print('logged in')
+
+class Wizard(User): #Subclass
+  def __init__(self, name, power):
+    self.name = name
+    self.power = power
+
+  def attack(self):
+    print(f"attacking with power of {self.power}")
+
+class Archer(User): #Subclass
+  def __init__(self, name, num_arrows):
+    self.name = name
+    self.num_arrows = num_arrows
+
+  def attack(self):
+    print(f"Attacking with arrows, Left with {self.num_arrows}")
+
+wizard1 = Wizard("Merlin", 50)
+archer1 = Archer("Robin", 1000)
+
+def player_attack(char):
+  char.attack()
+
+player_attack(wizard1)
+player_attack(archer1)
+
+# Result: The same function gives a different output, because of polymorphism.
+# attacking with power of 50
+# Attacking with arrows, Left with 1000
+```
+- Another way of displaying we can use polymorphism to work.
+
+```
+class User(): #Parent Class
+  def sign_in(self):
+    print('logged in')
+
+class Wizard(User): #Subclass
+  def __init__(self, name, power):
+    self.name = name
+    self.power = power
+
+  def attack(self):
+    print(f"attacking with power of {self.power}")
+
+class Archer(User): #Subclass
+  def __init__(self, name, num_arrows):
+    self.name = name
+    self.num_arrows = num_arrows
+
+  def attack(self):
+    print(f"Attacking with arrows, Left with {self.num_arrows}")
+
+wizard1 = Wizard("Merlin", 50)
+archer1 = Archer("Robin", 1000)
+
+for char in [wizard1, archer1]:
+  char.attack()
+
+#Result: Same Result as above
+```
+- polymorphism allows us to have many forms
+- For example, we can even use the parent class method in the subclass
+```
+class User(): #Parent Class
+  def sign_in(self):
+    print('logged in')
+
+  def attack(self):
+    print('do nothing')
+
+class Wizard(User): #Subclass
+  def __init__(self, name, power):
+    self.name = name
+    self.power = power
+
+  def attack(self):
+    User.attack(self)
+    print(f"attacking with power of {self.power}")
+
+class Archer(User): #Subclass
+  def __init__(self, name, num_arrows):
+    self.name = name
+    self.num_arrows = num_arrows
+
+  def attack(self):
+    print(f"Attacking with arrows, Left with {self.num_arrows}")
+
+wizard1 = Wizard("Merlin", 50)
+archer1 = Archer("Robin", 1000)
+
+for char in [wizard1, archer1]:
+  char.attack()
+# Result
+# do nothing
+# attacking with power of 50
+# Attacking with arrows, Left with 1000
+```
+- Polymorphism allows us to refine methods from derived classes such as archer and wizard.
+- And object that instantiated can be behave in different ways and forms because of polymorphism.
+
+### Exercise
+https://replit.com/@aneagoie/inheritance-exercise
+
+Solution: https://replit.com/@LightGamer1/inheritance-exercise?v=1
 
 
+### Super()
+- The super() function is used to give access to methods and properties of a parent or sibling class. 
+- The super() function returns an object that represents the parent class.
+```
+class User(): #Parent Class
+  def __init__(self, email):
+    self.email = email
+  
+  def sign_in(self):
+    print('logged in')
+
+  def attack(self):
+    print('do nothing')
+
+class Wizard(User): #Subclass
+  def __init__(self, name, power, email):
+    super().__init__(email)
+    self.name = name
+    self.power = power
+
+  def attack(self):
+    User.attack(self)
+    print(f"attacking with power of {self.power}")
+
+class Archer(User): #Subclass
+  def __init__(self, name, num_arrows):
+    self.name = name
+    self.num_arrows = num_arrows
+
+  def attack(self):
+    print(f"Attacking with arrows, Left with {self.num_arrows}")
+
+wizard1 = Wizard("Merlin", 50, "wizard1@gmail.com")
+archer1 = Archer("Robin", 1000)
+
+print(wizard1.email)
+
+#Result: wizard1@gmail.com
+```
+
+- Another example of super()
+```
+class Parent:
+  def __init__(self, txt):
+    self.message = txt
+
+  def printmessage(self):
+    print(self.message)
+
+class Child(Parent):
+  def __init__(self, txt):
+    super().__init__(txt)
+
+x = Child("Hello, and welcome!")
+
+x.printmessage()
+```
